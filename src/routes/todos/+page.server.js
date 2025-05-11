@@ -15,8 +15,13 @@ export function load({ cookies }) {
 
 // handle the form submission
 export const actions = {
-    default: async ({ cookies, request }) => {
+    create: async ({ cookies, request }) => {
         const formData = await request.formData();
         db.createTodo(cookies.get('userId'), formData.get('description'));
+    },
+
+    delete: async ({ cookies, request }) => {
+        const formData = await request.formData();
+        db.deleteTodo(cookies.get('userId'), formData.get('id'));
     }
 };
