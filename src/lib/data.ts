@@ -1,5 +1,12 @@
-export const posts = [
-	{
+interface Post {
+    slug: string;
+    title: string;
+    content: string;
+    createdAt?: Date | undefined;
+}
+
+export const posts: Post[] = [
+    {
 		slug: 'welcome',
 		title: 'Welcome to the Aperture Science computer-aided enrichment center',
 		content:
@@ -19,3 +26,5 @@ export const posts = [
 		content: "<p>I'm making a note here: HUGE SUCCESS.</p>"
 	}
 ];
+
+export type { Post };

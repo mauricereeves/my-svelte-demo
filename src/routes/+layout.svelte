@@ -17,7 +17,7 @@
     {@render children()}
   </main>
 
-  <footer class="bg-black text-white">
+  <footer class="bg-black text-white pl-4">
     <p>Copyright 2025</p>
   </footer>
 </div>

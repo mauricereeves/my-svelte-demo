@@ -3,7 +3,7 @@
 </script>
 
 <div>
-  <h1>todos, get it done</h1>
+  <h1 class="text-2xl font-bold">todos, get it done</h1>
 
   <form method="POST">
     <label

@@ -1,4 +1,4 @@
-import { posts } from "$lib/data.js";
+import { posts } from "$lib/data";
 import { error } from "@sveltejs/kit";
 
 // sveltekit will call this function when the page is loaded
