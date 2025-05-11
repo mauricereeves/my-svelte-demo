@@ -1,15 +1,14 @@
 <script lang="ts">
-    let { data } = $props();
+  let { data } = $props();
 </script>
 
 <div class="container mx-auto">
   <h1 class="text-3xl">Blog</h1>
-  <main role="main" class="w-full">
+  <main class="w-full">
     <ul>
-        {#each data.summaries as { slug, title }}
+      {#each data.summaries as { slug, title }}
         <li><a href={`/blog/${slug}`}>{title}</a></li>
-        {/each}
-    </ul> 
-  </main>   
+      {/each}
+    </ul>
+  </main>
 </div>
-
