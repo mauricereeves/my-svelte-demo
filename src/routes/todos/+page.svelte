@@ -1,5 +1,6 @@
 <script lang="ts">
   import { enhance } from "$app/forms";
+  import { fly, slide } from "svelte/transition";
 
   let { data, form } = $props();
 
@@ -31,7 +32,11 @@
 
   <ul>
     {#each data.todos as todo (todo.id)}
-      <li class="border-gray-500 border-2 rounded-md p-2 my-2">
+      <li
+        class="border-gray-500 border-2 rounded-md p-2 my-2"
+        in:fly={{ y: 20 }}
+        out:slide
+      >
         <form
           method="POST"
           action="?/delete"
