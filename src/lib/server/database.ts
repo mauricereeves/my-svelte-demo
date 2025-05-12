@@ -32,7 +32,17 @@ export function getTodos(userId: string): Todo[] {
 
 // create a todo for a user
 export function createTodo(userId: string, description: string): void {
+    // basic validation
+    if (!description) {
+        throw new Error('Description is required');
+    }
+    // ensure the db is initialized for a user
     const todos = db.get(userId) ?? ensureDb(userId);
+
+    // check for uniqueness
+    if (todos.find((todo) => todo.description === description)) {
+        throw new Error('Todo already exists');
+    }
 
     todos.push({
         id: crypto.randomUUID(),
