@@ -4,6 +4,9 @@
 
   let { data, form } = $props();
 
+  // the built in to focus doesn't work well with the progressive enhancement
+  // so we'll use a custom function to focus the input
+  // this is a workaround for https://github.com/sveltejs/svelte/issues/7707
   function focusInput(node: HTMLInputElement) {
     node.focus();
   }
